@@ -19,30 +19,19 @@
  **/
 package com.bee.music.system;
 
-import java.awt.EventQueue;
-
-import com.bee.music.ui.MainPlayer;
-
 /**
  * @author Naveen.A.N
  * 
  */
-public class Music {
+public class Application {
+
+	public static final String VERSION = "0.1";
 
 	/**
-	 * @param args
+	 * @return the version
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					MainPlayer window = new MainPlayer();
-					window.playerGui.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
+	public static String getVersion() {
+		return VERSION;
 	}
 
 }

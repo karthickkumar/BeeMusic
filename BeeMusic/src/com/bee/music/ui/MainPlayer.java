@@ -17,32 +17,34 @@
  *  along with OpenSearchServer. 
  *  If not, see <http://www.gnu.org/licenses/>.
  **/
-package com.bee.music.system;
+package com.bee.music.ui;
 
-import java.awt.EventQueue;
-
-import com.bee.music.ui.MainPlayer;
+import javax.swing.JFrame;
 
 /**
  * @author Naveen.A.N
  * 
  */
-public class Music {
+public class MainPlayer {
+
+	public JFrame playerGui;
 
 	/**
-	 * @param args
+	 * Create the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					MainPlayer window = new MainPlayer();
-					window.playerGui.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
+	public MainPlayer() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		playerGui = new JFrame();
+		playerGui.setBounds(100, 100, 450, 300);
+		playerGui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		Menus menus = new Menus();
+		playerGui.setJMenuBar(menus);
 	}
 
 }

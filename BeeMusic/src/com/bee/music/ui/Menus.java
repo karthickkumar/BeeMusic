@@ -17,32 +17,32 @@
  *  along with OpenSearchServer. 
  *  If not, see <http://www.gnu.org/licenses/>.
  **/
-package com.bee.music.system;
+package com.bee.music.ui;
 
-import java.awt.EventQueue;
-
-import com.bee.music.ui.MainPlayer;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
 
 /**
  * @author Naveen.A.N
  * 
  */
-public class Music {
+public class Menus extends JMenuBar {
+	public Menus() {
+
+		JMenu mnFile = new JMenu("File");
+		add(mnFile);
+
+		JMenuItem mntmOpen = new JMenuItem("Open");
+		mnFile.add(mntmOpen);
+
+		JMenu mnEdit = new JMenu("Edit");
+		add(mnEdit);
+	}
 
 	/**
-	 * @param args
+	 * 
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					MainPlayer window = new MainPlayer();
-					window.playerGui.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+	private static final long serialVersionUID = -5368936796629484103L;
 
 }
